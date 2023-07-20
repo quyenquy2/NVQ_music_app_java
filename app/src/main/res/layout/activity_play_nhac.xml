@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="10"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PlayNhacActivity"
+    android:background="@drawable/bgr_playnhac"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/activityPlayNhac_toolBar"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/activityPlayNhac_viewPager"
+        android:layout_weight="8"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="10">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="00:00"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:id="@+id/activityPlayNhac_timeStart"/>
+        <SeekBar
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:id="@+id/activityPlayNhac_seekBar"/>
+        <TextView
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="00:00"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:id="@+id/activityPlayNhac_timeEnd"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="35dp">
+
+<!--        <ImageButton-->
+<!--            android:scaleType="fitXY"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:src="@drawable/iconsuffle"-->
+<!--            android:background="@null"-->
+<!--            android:id="@+id/activityPlayNhac_btnSuffle"-->
+<!--            android:layout_weight="1"/>-->
+
+        <ImageButton
+            android:scaleType="fitXY"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/iconpreview"
+            android:background="@null"
+            android:id="@+id/activityPlayNhac_btnPrevious"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:scaleType="fitXY"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/iconplay"
+            android:background="@null"
+            android:id="@+id/activityPlayNhac_btnPlay"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:scaleType="fitXY"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/iconnext"
+            android:background="@null"
+            android:id="@+id/activityPlayNhac_btnNext"
+            android:layout_weight="1"/>
+
+<!--        <ImageButton-->
+<!--            android:scaleType="fitXY"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:src="@drawable/iconrepeat"-->
+<!--            android:background="@null"-->
+<!--            android:id="@+id/activityPlayNhac_btnRepeat"-->
+<!--            android:layout_weight="1"/>-->
+    </LinearLayout>
+
+</LinearLayout>

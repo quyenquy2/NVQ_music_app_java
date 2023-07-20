@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/change_password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg2"
+        >
+
+        <!-- Mật khẩu mới -->
+        <TextView
+            android:id="@+id/new_password_label"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:text="Mật khẩu mới:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_below="@id/old_password_input" />
+
+        <EditText
+            android:id="@+id/new_password_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_toEndOf="@id/new_password_label"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_below="@id/old_password_input" />
+
+        <!-- Xác nhận mật khẩu -->
+        <TextView
+            android:id="@+id/confirm_password_label"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:text="Xác nhận :"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_below="@id/new_password_input" />
+
+        <EditText
+            android:id="@+id/confirm_password_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_toEndOf="@id/confirm_password_label"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_below="@id/new_password_input" />
+
+        <!-- Nút đổi mật khẩu -->
+        <Button
+            android:id="@+id/change_password_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đổi mật khẩu"
+            android:textColor="@color/white"
+            android:background="@color/cardview_dark_background"
+            android:layout_marginTop="32dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/confirm_password_input" />
+
+    </RelativeLayout>
+</RelativeLayout>

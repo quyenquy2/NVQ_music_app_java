@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "621448703525",
+    "firebase_url": "https://musicapp-5be00-default-rtdb.firebaseio.com",
+    "project_id": "musicapp-5be00",
+    "storage_bucket": "musicapp-5be00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621448703525:android:a9c273a8e43854eab9d9cc",
+        "android_client_info": {
+          "package_name": "com.example.music"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621448703525-tc4m6lf9dhdvqe5m9u79q3hqumul2b4a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.music",
+            "certificate_hash": "33f7d9e63ac752c008ee5534a6706bd3ddbb587a"
+          }
+        },
+        {
+          "client_id": "621448703525-qt292l44ql6s3na7q3nlhrq6qkcvjjd2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYnybUV2xkpgIe9CRX7sraC6SgFQ4c76E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621448703525-qt292l44ql6s3na7q3nlhrq6qkcvjjd2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621448703525:android:313bbb41a3ce3faab9d9cc",
+        "android_client_info": {
+          "package_name": "com.liem.musicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621448703525-qt292l44ql6s3na7q3nlhrq6qkcvjjd2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYnybUV2xkpgIe9CRX7sraC6SgFQ4c76E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621448703525-qt292l44ql6s3na7q3nlhrq6qkcvjjd2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621448703525:android:e567af444e173061b9d9cc",
+        "android_client_info": {
+          "package_name": "com.quyen.musicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621448703525-qt292l44ql6s3na7q3nlhrq6qkcvjjd2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYnybUV2xkpgIe9CRX7sraC6SgFQ4c76E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621448703525-qt292l44ql6s3na7q3nlhrq6qkcvjjd2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
