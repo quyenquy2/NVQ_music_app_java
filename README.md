@@ -10,7 +10,7 @@ Notification Channels)
 Notification
 *  Web Service được viết bằng Html và Php nhằm mục đích quản
 lý dữ liệu của App và quản lý csdl
-*  Các Api backend được viết bằng php và được call bằng retrofit
+*  Các Api backend được viết bằng php và được call bằng Retrofit
 *  CSDL,API,Web Service được đẩy lên 000webhost.com
 
 # Các chức năng chính:
