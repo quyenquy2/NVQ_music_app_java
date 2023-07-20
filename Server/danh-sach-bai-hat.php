@@ -21,17 +21,17 @@
 	
     if(isset($_POST['idAlbum'])){
 		$idAlbum = $_POST['idAlbum'];
-		$query = "SELECT * FROM BaiHat WHERE IdAlbum = '$idAlbum'";
+		$query = "SELECT * FROM BaiHat WHERE IdAlbum LIKE '%,$idAlbum,%'";
 	}
 	
 	if(isset($_POST['idPlaylist'])){
 		$idPlaylist = $_POST['idPlaylist'];
-		$query = "SELECT * FROM BaiHat WHERE IdPlaylist = '$idPlaylist'";
+		$query = "SELECT * FROM BaiHat WHERE IdPlaylist LIKE '%,$idPlaylist,%'";
 	}
 	
 	if(isset($_POST['idTheLoai'])){
 		$idTheLoai = $_POST['idTheLoai'];
-		$query = "SELECT * FROM BaiHat WHERE IdTheLoai = '$idTheLoai'";
+		$query = "SELECT * FROM BaiHat WHERE IdTheLoai LIKE '%,$idTheLoai,%'";
 	}
 	
 	$arrayBaiHat= array();
