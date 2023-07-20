@@ -1,5 +1,5 @@
 # Ứng dụng nghe nhạc trên android
-*  link project: https://github.com/quyenquy2
+*  link project: https://github.com/quyenquy2/NVQ_music_app_java
 *  link web: https://bit.ly/mainadmin
 # Mô tả
 *  Ứng dụng nghe nhạc trực tuyến trên android sử dụng ngôn ngữ Java và
