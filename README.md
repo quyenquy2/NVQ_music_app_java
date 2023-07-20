@@ -31,6 +31,7 @@ lý dữ liệu của App và quản lý csdl
 <img src="https://github.com/quyenquy2/NVQ_music_app_java/assets/87377105/24fad992-67db-49d8-9108-f3cab13d2be1" width="800" high="600">
 <img src="https://github.com/quyenquy2/NVQ_music_app_java/assets/87377105/d30c8fad-4e95-4631-8e70-527cd1e89477" width="300">
 <img src="https://github.com/quyenquy2/NVQ_music_app_java/assets/87377105/c4697678-b2cb-468a-b1c4-918f0c4900d8" width="300">
-<img src="https://github.com/quyenquy2/NVQ_music_app_java/assets/87377105/2154c0a9-fbd6-41d4-9343-00b4ec5595e9" width="300">
+<img src="https://github.com/quyenquy2/NVQ_music_app_java/assets/87377105/1a775b6c-5843-4a74-95a0-5f1975a9e282" width="300">
+
 
 
