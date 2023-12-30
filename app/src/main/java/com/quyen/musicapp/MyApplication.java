@@ -10,6 +10,7 @@ import androidx.multidex.MultiDexApplication;
 
 
 public class MyApplication extends MultiDexApplication {
+    public static int posPlay=0;
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);

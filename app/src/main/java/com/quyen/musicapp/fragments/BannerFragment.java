@@ -19,6 +19,7 @@ import com.quyen.musicapp.services.DataService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import me.relex.circleindicator.CircleIndicator;
 import retrofit2.Call;
@@ -70,8 +71,13 @@ public class BannerFragment extends Fragment {
                     @Override
                     public void run() {
                         currentItem++;
-                        if(currentItem >= mViewPager.getAdapter().getCount())
+                        if (mViewPager.getAdapter() != null){
+                            if(currentItem >= mViewPager.getAdapter().getCount())
+                                currentItem = 0;
+                        } else {
                             currentItem = 0;
+                        }
+
                         mViewPager.setCurrentItem(currentItem);
                         handler.postDelayed(runnable, 2500);
                     }

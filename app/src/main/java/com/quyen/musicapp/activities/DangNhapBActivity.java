@@ -1,6 +1,7 @@
 package com.quyen.musicapp.activities;
 
-import androidx.annotation.NonNull;
+import static com.quyen.musicapp.services.Utils.sha256Hash;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -64,7 +65,8 @@ public class DangNhapBActivity extends AppCompatActivity {
                     Toast.makeText(DangNhapBActivity.this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 } else
                 {
-                    clicklogin(username,password);
+                    String hashPass=sha256Hash(password);
+                    clicklogin(username,hashPass);
                     //onclicklogin(username,password);
                 }
 

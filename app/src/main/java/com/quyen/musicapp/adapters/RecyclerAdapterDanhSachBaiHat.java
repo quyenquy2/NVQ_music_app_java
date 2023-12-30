@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.quyen.musicapp.MyApplication;
 import com.quyen.musicapp.R;
 import com.quyen.musicapp.activities.PlayNhacActivity;
 import com.quyen.musicapp.models.BaiHat;
@@ -142,9 +143,8 @@ public class RecyclerAdapterDanhSachBaiHat extends RecyclerView.Adapter<Recycler
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MyApplication.posPlay=position;
                 Intent intent = new Intent(context, PlayNhacActivity.class);
-                intent.putExtra("baiHat",  baiHat);
-                intent.putExtra("listBaiHat", baiHatArrayList);
                 context.startActivity(intent);
 
                 Intent intent1=new Intent(context,MusicService.class);

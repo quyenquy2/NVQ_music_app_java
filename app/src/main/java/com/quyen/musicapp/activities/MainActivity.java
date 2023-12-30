@@ -11,6 +11,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.quyen.musicapp.R;
 import com.quyen.musicapp.adapters.ViewPagerAdapterMain;
 import com.quyen.musicapp.fragments.AccountFragmment;
+import com.quyen.musicapp.fragments.TimKiemFragment;
 import com.quyen.musicapp.fragments.TranngChuFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,11 +51,14 @@ public class MainActivity extends AppCompatActivity {
     public void init() {
         ViewPagerAdapterMain mainViewPagerAdapter = new ViewPagerAdapterMain(getSupportFragmentManager());
         mainViewPagerAdapter.addFragment(new TranngChuFragment(), "Trang chủ");
-        mainViewPagerAdapter.addFragment(new AccountFragmment(), "Thêm");
+        mainViewPagerAdapter.addFragment(new TimKiemFragment(), "Tìm Kiếm");
+        mainViewPagerAdapter.addFragment(new AccountFragmment(), "Tài Khoản");
         viewPager.setAdapter(mainViewPagerAdapter);
+        viewPager.setOffscreenPageLimit(3);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_home_24);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_baseline_post_add_24);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_baseline_post_add_24);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_search_red);
         tabLayout.setBackgroundColor(Color.rgb(177, 177, 177));
     }
 }

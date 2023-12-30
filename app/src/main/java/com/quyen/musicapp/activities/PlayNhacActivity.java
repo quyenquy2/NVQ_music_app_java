@@ -216,7 +216,20 @@ public class PlayNhacActivity extends AppCompatActivity {
             }
         }, 500);
     }
-
+    private void loadBaiHat() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    playDanhSachBaiHatFragment.recyclerAdapterPlayDanhSachBaiHat.loadPos(positon);
+                    handler.removeCallbacks(this);
+                } catch (Exception e) {
+                    handler.postDelayed(this, 500);
+                }
+            }
+        }, 500);
+    }
     private void mapping() {
         toolbar = findViewById(R.id.activityPlayNhac_toolBar);
         seekbar = findViewById(R.id.activityPlayNhac_seekBar);
@@ -255,7 +268,7 @@ public class PlayNhacActivity extends AppCompatActivity {
     private void customView() {
         if (baiHat.getTenBaiHat() != null && baiHat.getHinhAnhBaiHat() != null) {
             getSupportActionBar().setTitle(baiHat.getTenBaiHat());
-
+            loadBaiHat();
             if (!goback) TimeSong();
 
             if(isplay)

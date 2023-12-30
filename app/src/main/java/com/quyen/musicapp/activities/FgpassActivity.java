@@ -1,11 +1,14 @@
 package com.quyen.musicapp.activities;
 
-import androidx.annotation.NonNull;
+
+import static com.quyen.musicapp.services.Utils.sha256Hash;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +29,8 @@ public class FgpassActivity extends AppCompatActivity {
     EditText edtUsername,edtotp;
     Button btnReset,btngoback,btnsendotp;
     private String otp;
+    Boolean isOtpOk=false;
+    private CountDownTimer countDownTimer;
     EditText new_password_input,confirm_password_input;
     TaiKhoan taikhoan;
     OtpTimer otpTimer = new OtpTimer();
@@ -52,9 +57,10 @@ public class FgpassActivity extends AppCompatActivity {
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (otpTimer.isTimerRunning()) {
+                if (isOtpOk) {
                         if (edtotp.getText().toString().equals(otp)) {
-                        showdialogupdatepass();} else {
+                        showdialogupdatepass();
+                        } else {
                             Toast.makeText(FgpassActivity.this, "Mã Otp không chính xác!", Toast.LENGTH_SHORT).show();
                         }
                 } else {
@@ -100,7 +106,7 @@ public class FgpassActivity extends AppCompatActivity {
                 {
                     if (newpass.equals(confirmpass))
                     {
-                        udpass(taikhoan.getUsername(),newpass);
+                        udpass(taikhoan.getUsername(),sha256Hash(newpass));
 
                     } else {
                         Toast.makeText(FgpassActivity.this, "Mật khẩu xác nhận không đúng", Toast.LENGTH_SHORT).show();
@@ -138,10 +144,7 @@ public class FgpassActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<TaiKhoan> call, Response<TaiKhoan> response) {
                 taikhoan=(TaiKhoan) response.body();
-                otp=generateRandomString();
-                SendMail sm = new SendMail(FgpassActivity.this, taikhoan.getEmail(),"OTP Reset Password", "Mã xác minh của bạn là: "+otp);
-                sm.execute();
-                otpTimer.startTimer();
+                startCountdownTimer();
                 //sendmail(taikhoan.getEmail());
             }
 
@@ -174,6 +177,32 @@ public class FgpassActivity extends AppCompatActivity {
         btnReset =findViewById(R.id.btnreset);
         btngoback=findViewById(R.id.btngoback);
         edtotp=findViewById(R.id.edtotp);
+    }
+    private void startCountdownTimer() {
+        otp=generateRandomString();
+        SendMail sm = new SendMail(FgpassActivity.this, taikhoan.getEmail(),"OTP Reset Password", "Mã xác minh của bạn là: "+otp);
+        sm.execute();
+        isOtpOk=true;
+        countDownTimer = new CountDownTimer(60000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                long seconds = millisUntilFinished / 1000;
+                if (seconds == 0) {
+                    btnsendotp.setText("Lấy mã");
+                    isOtpOk=false;
+                } else {
+                    btnsendotp.setText(String.valueOf(seconds));
+                }
+            }
+
+            @Override
+            public void onFinish() {
+                btnsendotp.setText("Lấy mã");
+                isOtpOk=false;
+            }
+        };
+
+        countDownTimer.start();
     }
 
 

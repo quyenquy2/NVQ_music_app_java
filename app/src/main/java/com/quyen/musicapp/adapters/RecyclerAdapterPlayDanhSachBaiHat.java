@@ -1,5 +1,6 @@
 package com.quyen.musicapp.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.quyen.musicapp.R;
 import com.quyen.musicapp.activities.PlayNhacActivity;
 import com.quyen.musicapp.models.BaiHat;
+import com.quyen.musicapp.services.MusicService;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -22,10 +24,13 @@ import java.util.ArrayList;
 public class RecyclerAdapterPlayDanhSachBaiHat extends RecyclerView.Adapter<RecyclerAdapterPlayDanhSachBaiHat.ViewHolder> {
     private Context context;
     private ArrayList<BaiHat> baiHatArrayList;
+    private int currentPos=0;
+    private int previousPos=0;
 
-    public RecyclerAdapterPlayDanhSachBaiHat(Context context, ArrayList<BaiHat> baiHatArrayList) {
+    public RecyclerAdapterPlayDanhSachBaiHat(Context context, ArrayList<BaiHat> baiHatArrayList,int position) {
         this.context = context;
         this.baiHatArrayList = baiHatArrayList;
+        currentPos=position;
     }
 
     @NonNull
@@ -36,7 +41,7 @@ public class RecyclerAdapterPlayDanhSachBaiHat extends RecyclerView.Adapter<Recy
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull RecyclerAdapterPlayDanhSachBaiHat.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull @NotNull RecyclerAdapterPlayDanhSachBaiHat.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         BaiHat baiHat = baiHatArrayList.get(position);
         holder.txtCaSi.setText(baiHat.getTenCaSi() );
         holder.txtBaiHat.setText(baiHat.getTenBaiHat());
@@ -49,11 +54,25 @@ public class RecyclerAdapterPlayDanhSachBaiHat extends RecyclerView.Adapter<Recy
                 }
             }
         });
+        if (position==currentPos){
+            holder.itemView.setBackgroundResource(R.drawable.background_item_selected);
+        } else {
+            holder.itemView.setBackgroundResource(R.drawable.background_item_unselected);
+        }
     }
 
     @Override
     public int getItemCount() {
         return baiHatArrayList.size();
+    }
+
+    public void loadPos(int positon) {
+        if (currentPos != positon){
+            previousPos=currentPos;
+            currentPos=positon;
+            notifyItemChanged(previousPos);
+            notifyItemChanged(currentPos);
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

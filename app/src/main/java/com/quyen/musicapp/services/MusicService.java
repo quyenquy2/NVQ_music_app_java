@@ -12,7 +12,6 @@ import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.IBinder;
-import android.os.Parcelable;
 import android.widget.RemoteViews;
 
 import androidx.annotation.Nullable;

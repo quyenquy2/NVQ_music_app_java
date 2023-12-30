@@ -2,6 +2,7 @@ package com.quyen.musicapp.fragments;
 
 
 import static com.quyen.musicapp.activities.DangNhapBActivity.taikhoanlg;
+import static com.quyen.musicapp.services.Utils.sha256Hash;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -200,13 +201,13 @@ public class AccountFragmment extends Fragment  {
         {
             Toast.makeText(getContext(), "Vui lòng nhập đủ thông tin", Toast.LENGTH_SHORT).show();
         } else {
-            if(oldpass.equals(taikhoanlg.getPassword()))
+            if(sha256Hash(oldpass).equals(taikhoanlg.getPassword()))
             {
                 if (newpass.length() >= 8)
                 {
                     if (newpass.equals(confirmpass))
                     {
-                        udpass(taikhoanlg.getUsername(),newpass);
+                        udpass(taikhoanlg.getUsername(),sha256Hash(newpass));
                         Toast.makeText(getContext(), "Đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
                         old_password_input.setText("");
                         new_password_input.setText("");

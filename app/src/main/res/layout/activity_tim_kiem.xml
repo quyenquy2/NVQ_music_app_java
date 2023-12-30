@@ -20,7 +20,7 @@
                 android:layout_gravity="center"
                 android:id="@+id/gohomend"
                 android:textColor="@color/white"
-                android:background="@drawable/ic_baseline_home_24"
+                android:background="@drawable/ic_search_red"
                 android:layout_width="50dp"
                 android:layout_height="50dp">
             </Button>

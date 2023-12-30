@@ -29,7 +29,7 @@ public class TranngChuFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        fab = getActivity().findViewById(R.id.fab_btn);
+        //fab = getActivity().findViewById(R.id.fab_btn);
         return inflater.inflate(R.layout.fragment_tranng_chu, container, false);
     }
 
@@ -37,17 +37,17 @@ public class TranngChuFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        fab = getActivity().findViewById(R.id.fab_btn);
-
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(getContext(), "ok", Toast.LENGTH_SHORT).show();
-                Intent intent =new Intent(getActivity(),TimKiemActivity.class);
-                startActivity(intent);
-            }
-        });
+//        fab = getActivity().findViewById(R.id.fab_btn);
+//
+//
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //Toast.makeText(getContext(), "ok", Toast.LENGTH_SHORT).show();
+//                Intent intent =new Intent(getActivity(),TimKiemActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         SwipeRefreshLayout swipeRefreshLayout = getActivity().findViewById(R.id.swipe_container);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

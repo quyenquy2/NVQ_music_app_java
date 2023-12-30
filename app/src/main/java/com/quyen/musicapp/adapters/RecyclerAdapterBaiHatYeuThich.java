@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.quyen.musicapp.MyApplication;
 import com.quyen.musicapp.R;
 import com.quyen.musicapp.activities.PlayNhacActivity;
 import com.quyen.musicapp.models.BaiHat;
@@ -59,8 +60,6 @@ public class RecyclerAdapterBaiHatYeuThich extends RecyclerView.Adapter<Recycler
         if (Utils.chechYT(baiHat)) {
             holder.imgLove.setImageResource(R.drawable.iconloved);
         }
-
-
 
         Picasso.get().load(baiHat.getHinhAnhBaiHat()).into(holder.imgBaiHat);
 
@@ -144,14 +143,14 @@ public class RecyclerAdapterBaiHatYeuThich extends RecyclerView.Adapter<Recycler
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MyApplication.posPlay=position;
                 Intent intent = new Intent(context, PlayNhacActivity.class);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                intent.putExtra("baiHat",  baiHat);
                 context.startActivity(intent);
 
                 Intent intent1=new Intent(context,MusicService.class);
+                intent1.putExtra("position",position);
                 intent1.putExtra("baiHat",  baiHat);
-                //intent.putExtra("listBaiHat", baiHatArrayList);
+                intent1.putExtra("listBaiHat", baiHatArrayList);
                 context.startService(intent1);
             }
         });

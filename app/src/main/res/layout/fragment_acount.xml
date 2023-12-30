@@ -303,10 +303,10 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:gravity="center_horizontal"
-            android:text="Nhóm 2 xây dụng ứng dụng nghe nhạc trên Android,ngôn ngữ Java,cơ sở dữ liệu mysql."
+            android:text="Ứng dụng nghe nhạc trên Android,ngôn ngữ Java,cơ sở dữ liệu mysql."
             android:textSize="20dp"
             android:background="@drawable/bg2"
-            android:visibility="visible"/>
+            android:visibility="gone"/>
 
 
         <!-- Đăng xuất -->
